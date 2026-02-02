@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    base: command === 'serve' ? '/' : '/js-curse-project/',
+    base: command === 'serve' ? '/' : '/your-energyCourse/', //repo name
     root: 'src',
     css: {
       preprocessorOptions: {
