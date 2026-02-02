@@ -1,14 +1,17 @@
 .home__content {
-  padding: var(--spacing-3xl) var(--spacing-xl);
-  max-width: 1440px;
-  margin: 0 auto;
-  background-color: var(--color-bg-light);
+  padding: var(--spacing-3xl) 0;
 }
 
 .home__main {
-  display: flex;
-  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: var(--spacing-2xl);
 }
+
 
 .home__title {
   width: 600px;

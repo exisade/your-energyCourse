@@ -271,7 +271,7 @@ ISC License
 
 ## 👨‍💻 Автор
 
-Alexander Repeta - [alexander.repeta@gmail.com](mailto:alexander.repeta@gmail.com)
+Toma Denys - [reewd22@gmail.com](mailto:reewd22@gmail.com)
 
 ---
 

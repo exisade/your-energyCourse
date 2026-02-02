@@ -1,4 +1,5 @@
 /* Main CSS file - imports all modules */
+
 @use './fonts';
 @use './variables';
 @use './common';
@@ -11,3 +12,7 @@
 @use './footer';
 
 @import 'modern-normalize/modern-normalize.css';
+
+body {
+  background: rgb(255, 255, 255) !important;
+}
