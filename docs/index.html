@@ -6,14 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Energy - Get Body in shape, Stay healthy</title>
   
-  <script type="module" crossorigin src="/your-energyCourse/index.js"></script>
-  <link rel="stylesheet" crossorigin href="/your-energyCourse/assets/index-B3nUSOab.css">
+  <!-- Preconnect to external resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="/your-energyCourse/assets/index-B3nUSOab.css" as="style">
+  
+  <!-- Load CSS with media attribute for non-blocking -->
+  <link rel="stylesheet" href="/your-energyCourse/assets/index-B3nUSOab.css" media="print" onload="this.media='all'; this.onload=null;">
+  
+  <!-- Fallback for no-JS -->
+  <noscript>
+    <link rel="stylesheet" href="/your-energyCourse/assets/index-B3nUSOab.css">
+  </noscript>
+  
+  <!-- Defer JavaScript execution -->
+  <script type="module" src="/your-energyCourse/index.js" defer></script>
 </head>
 
 <body>
   <header class="header">
   <div class="header__logo">
-    <img src="/your-energyCourse/img/svg/logo-dark.svg" alt="Your Energy">
+    <img src="/your-energyCourse/img/svg/logo-dark.svg" alt="Your Energy" width="120" height="40" loading="eager">
   </div>
   <nav class="header__nav">
     <button class="header__nav-link header__nav-link--active" data-page="home">Home</button>
@@ -21,13 +35,13 @@
   </nav>
   <div class="header__socials">
     <a href="/" class="header__socials-link" aria-label="Facebook">
-      <img src="/your-energyCourse/img/svg/facebook-dark.svg" alt="Facebook">
+      <img src="/your-energyCourse/img/svg/facebook-dark.svg" alt="Facebook" width="24" height="24" loading="lazy">
     </a>
     <a href="/" class="header__socials-link" aria-label="Instagram">
-      <img src="/your-energyCourse/img/svg/instagram-dark.svg" alt="Instagram">
+      <img src="/your-energyCourse/img/svg/instagram-dark.svg" alt="Instagram" width="24" height="24" loading="lazy">
     </a>
     <a href="/" class="header__socials-link" aria-label="YouTube">
-      <img src="/your-energyCourse/img/svg/youtube-dark.svg" alt="YouTube">
+      <img src="/your-energyCourse/img/svg/youtube-dark.svg" alt="YouTube" width="24" height="24" loading="lazy">
     </a>
   </div>
   <button class="header__burger" aria-label="Menu">
@@ -52,13 +66,13 @@
     </nav>
     <div class="mobile-menu__socials">
       <a href="/" class="mobile-menu__socials-link" aria-label="Facebook">
-        <img src="/your-energyCourse/img/svg/facebook-light.svg" alt="Facebook">
+        <img src="/your-energyCourse/img/svg/facebook-light.svg" alt="Facebook" width="24" height="24" loading="lazy">
       </a>
       <a href="/" class="mobile-menu__socials-link" aria-label="Instagram">
-        <img src="/your-energyCourse/img/svg/instagram-light.svg" alt="Instagram">
+        <img src="/your-energyCourse/img/svg/instagram-light.svg" alt="Instagram" width="24" height="24" loading="lazy">
       </a>
       <a href="/" class="mobile-menu__socials-link" aria-label="YouTube">
-        <img src="/your-energyCourse/img/svg/youtube-light.svg" alt="YouTube">
+        <img src="/your-energyCourse/img/svg/youtube-light.svg" alt="YouTube" width="24" height="24" loading="lazy">
       </a>
     </div>
   </div>
@@ -70,7 +84,7 @@
     <div class="home__text">
       <h1 class="home__title">
         <span class="home__title-decor">
-          <img src="/your-energyCourse/img/svg/sun.svg" alt="Sun">
+          <img src="/your-energyCourse/img/svg/sun.svg" alt="Sun" width="40" height="40" loading="eager">
         </span>
         Get <span class="home__title-italic">Body</span> in shape, Stay healthy
       </h1>
@@ -81,7 +95,7 @@
     </div>
     <div class="home__sidebar">
       <div class="home__image-small">
-        <img src="/your-energyCourse/img/f160f7810cea23bed860734e12e1a81def3d668a.jpg" alt="Women exercising outdoors">
+        <img src="/your-energyCourse/img/f160f7810cea23bed860734e12e1a81def3d668a.jpg" alt="Women exercising outdoors" width="300" height="200" loading="lazy">
       </div>
       <div class="home__hashtags">
         <div class="home__hashtags-item">#Sport</div>
@@ -92,7 +106,7 @@
     </div>
   </div>
   <div class="home__hero">
-    <img src="/your-energyCourse/img/71236a8cc6b04d6a87e15feef63b9cb64728b379.jpg" alt="Abductors exercise">
+    <img src="/your-energyCourse/img/71236a8cc6b04d6a87e15feef63b9cb64728b379.jpg" alt="Abductors exercise" width="800" height="500" loading="lazy">
   </div>
 </section>
 
@@ -128,11 +142,11 @@
   <div class="exercises__content__main">
     <div class="exercises__content__main__aside">
       <div class="exercises__content__main__aside__quote">
-        <img src="/your-energyCourse/img/svg/runner-icon-light.svg" alt="Quote">
+        <img src="/your-energyCourse/img/svg/runner-icon-light.svg" alt="Quote" width="60" height="60" loading="lazy">
         <div class="exercises__content__main__aside__quote-content">
           <div class="exercises__content__main__aside__quote-title">
             <span class="exercises__content__main__aside__quote-title-text">Quote of the day</span>
-            <img src="/your-energyCourse/img/svg/quote-icon.svg" alt="Quote">
+            <img src="/your-energyCourse/img/svg/quote-icon.svg" alt="Quote" width="20" height="20" loading="lazy">
           </div>
           <p class="exercises__content__main__aside__quote-text" id="js-exercises-quote-text"></p>
           <div class="exercises__content__main__aside__quote-author" id="js-exercises-quote-author"></div>
@@ -140,10 +154,10 @@
       </div>
 
       <img src="/your-energyCourse/img/587b8632b7ccf35f98d92322207f124659b97cc6.jpg" alt="Exercise image"
-        class="exercises__content__main__aside__image">
+        class="exercises__content__main__aside__image" width="350" height="400" loading="lazy">
 
       <div class="exercises__content__main__aside__norm">
-        <img src="/your-energyCourse/img/svg/norm-icon.svg" alt="Norm icon">
+        <img src="/your-energyCourse/img/svg/norm-icon.svg" alt="Norm icon" width="40" height="40" loading="lazy">
         <div class="exercises__content__main__aside__norm-context">
           <span class="exercises__content__main__aside__norm-context-title">110 min</span><br>
           <span class="exercises__content__main__aside__norm-context-subtitle">Daily norm of sports</span>
@@ -171,17 +185,17 @@
   <footer class="footer">
   <div class="footer__brand">
     <div class="footer__brand-logo">
-      <img src="/your-energyCourse/img/svg/logo-light.svg" alt="Your Energy">
+      <img src="/your-energyCourse/img/svg/logo-light.svg" alt="Your Energy" width="120" height="40" loading="lazy">
     </div>
     <div class="footer__socials">
       <a href="/" class="footer__socials-link" aria-label="Facebook">
-        <img src="/your-energyCourse/img/svg/facebook-light.svg" alt="Facebook">
+        <img src="/your-energyCourse/img/svg/facebook-light.svg" alt="Facebook" width="24" height="24" loading="lazy">
       </a>
       <a href="/" class="footer__socials-link" aria-label="Instagram">
-        <img src="/your-energyCourse/img/svg/instagram-light.svg" alt="Instagram">
+        <img src="/your-energyCourse/img/svg/instagram-light.svg" alt="Instagram" width="24" height="24" loading="lazy">
       </a>
       <a href="/" class="footer__socials-link" aria-label="YouTube">
-        <img src="/your-energyCourse/img/svg/youtube-light.svg" alt="YouTube">
+        <img src="/your-energyCourse/img/svg/youtube-light.svg" alt="YouTube" width="24" height="24" loading="lazy">
       </a>
     </div>
     <span class="footer__copyright">Your Energy. All rights reserved.</span>
@@ -221,7 +235,7 @@
 
     <div class="exercise-modal__body">
       <div class="exercise-modal__image">
-        <img id="js-exercise-modal-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Exercise illustration">
+        <img id="js-exercise-modal-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Exercise illustration" loading="lazy">
       </div>
 
       <div class="exercise-modal__info">
@@ -399,5 +413,3 @@
 </body>
 
 </html>
-
-
