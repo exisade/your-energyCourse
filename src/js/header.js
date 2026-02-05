@@ -124,11 +124,16 @@ document.addEventListener('click', (e) => {
 
   const page = btn.dataset.page;
 
+  // get basic url
+  const baseURL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? '' 
+    : '/your-energyCourse'; // 
+
   if (page === 'home') {
-    window.location.href = '/index.html';
+    window.location.href = `${baseURL}/`;
   }
 
   if (page === 'favorites') {
-    window.location.href = '/favorites.html';
+    window.location.href = `${baseURL}/favorites.html`;
   }
 });
