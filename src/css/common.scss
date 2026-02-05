@@ -3,10 +3,9 @@ body {
   margin: 0 auto;
   overflow-x: hidden;
   padding: 0;
-  background-color: var(--color-light);
+  background-color: #F6F6F6; 
   font-family: var(--font-family);
 }
-
 /* Form validation error styles */
 .form-error {
   font-family: var(--font-family);
