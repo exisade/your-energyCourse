@@ -118,3 +118,17 @@ export function getCurrentPage() {
   return currentPage;
 }
 
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.header__nav-link');
+  if (!btn) return;
+
+  const page = btn.dataset.page;
+
+  if (page === 'home') {
+    window.location.href = '/index.html';
+  }
+
+  if (page === 'favorites') {
+    window.location.href = '/favorites.html';
+  }
+});

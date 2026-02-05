@@ -27,12 +27,16 @@
     padding: var(--spacing-md) var(--spacing-lg);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    max-width: 600px;
     width: 100%;
   }
 
   &--error &__content {
     background-color: rgba(255, 77, 79, 0.95);
+  }
+
+  &--warning &__content {    
+    background-color: rgba(238, 246, 6, 0.95);
+    color: #fff;
   }
 
   &__text {

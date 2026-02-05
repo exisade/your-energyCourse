@@ -10,9 +10,8 @@
 @use './rating-modal';
 @use './global-notification';
 @use './footer';
-
 @import 'modern-normalize/modern-normalize.css';
-
+@import './favorites';
 body {
-  background: rgb(255, 255, 255) !important;
+  background-color: #F6F6F6 !important;
 }

@@ -24,72 +24,26 @@ import {
 import { initHeader } from './js/header.js';
 import { displayQuote } from './js/quote.js';
 
-/**
- * Sends subscription request to backend
- * @param {string} email
- * @returns {Promise<{success: boolean, data?: any, error?: string}>}
- */
-async function subscribeToNewsletter(email) {
-  try {
-    const response = await fetch(
-      'https://your-energy.b.goit.study/api/subscription',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email: email.trim() }),
-      }
-    );
-
-    if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Failed to subscribe');
-    }
-
-    const data = await response.json();
-    return { success: true, data };
-  } catch (error) {
-    return { success: false, error: error.message };
-  }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Display quote of the day
-  displayQuote();
+  const isFavoritesPage = document.body.dataset.page === 'favorites';
 
-  // Initialize modals
+  // ===== ОБЩЕЕ ДЛЯ ВСЕХ СТРАНИЦ =====
+  displayQuote();
   initExerciseModal();
   initRatingModal();
-
-  // Initialize global notifications
   initGlobalNotification();
-
-  // Initialize header logic
   initHeader();
-
-  // Initialize search functionality
-  initSearch();
-
-  // Initialize cards event delegation
   initCardsEventListener();
 
-  // Initial load of exercise cards
-  loadExerciseCards('Muscles', 1);
+  // ===== ТОЛЬКО ДЛЯ HOME =====
+  if (!isFavoritesPage) {
+    initSearch();
+    loadExerciseCards('Muscles', 1);
 
-  // Close modals on Escape key press
-  document.addEventListener('keydown', event => {
-    if (event.key !== 'Escape') return;
-    closeExerciseModal?.();
-    closeRatingModal?.();
-  });
+    const filterButtons = document.querySelectorAll(
+      '.exercises__content__header-filters-item'
+    );
 
-  // Filters handling
-  const filterButtons = document.querySelectorAll(
-    '.exercises__content__header-filters-item'
-  );
-
-  if (filterButtons.length) {
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
         filterButtons.forEach(btn =>
@@ -102,14 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
           'exercises__content__header-filters-item--active'
         );
 
-        const filter = button.getAttribute('data-filter');
+        const filter = button.dataset.filter;
         updateBreadcrumbs(null);
         loadExerciseCards(filter, 1);
       });
     });
   }
 
-  // Subscription form handling
+  // ===== ESC =====
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    closeExerciseModal?.();
+    closeRatingModal?.();
+  });
+
+  // ===== SUBSCRIBE =====
   const subscribeForm = document.getElementById('subscribeForm');
   const subscribeEmailInput = document.getElementById('subscribeEmail');
   const subscribeEmailError = document.getElementById('subscribeEmailError');
@@ -147,14 +108,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (hasErrors) return;
 
-      const result = await subscribeToNewsletter(email);
+      try {
+        const response = await fetch(
+          'https://your-energy.b.goit.study/api/subscription',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+          }
+        );
 
-      if (result.success) {
-        showGlobalNotification(result.data.message, 'success');
+        const data = await response.json();
+        showGlobalNotification(data.message, 'success');
         subscribeForm.reset();
-        hideFieldError(subscribeEmailInput, subscribeEmailError);
-      } else {
-        showGlobalNotification(result.error, 'error');
+      } catch (error) {
+        showGlobalNotification('Subscription failed', 'error');
       }
     });
   }
