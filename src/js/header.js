@@ -119,21 +119,23 @@ export function getCurrentPage() {
 }
 
 document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.header__nav-link');
+  const btn = e.target.closest('.header__nav-link, .mobile-menu__nav-link');
   if (!btn) return;
+  
+  e.preventDefault(); 
 
   const page = btn.dataset.page;
 
-  // get basic url
+  
   const baseURL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? '' 
-    : '/your-energyCourse'; // 
+    ? '/' 
+    : '/your-energyCourse/';
 
   if (page === 'home') {
-    window.location.href = `${baseURL}/`;
+    window.location.href = `${baseURL}index.html`;
   }
 
   if (page === 'favorites') {
-    window.location.href = `${baseURL}/favorites.html`;
+    window.location.href = `${baseURL}favorites.html`;
   }
 });
