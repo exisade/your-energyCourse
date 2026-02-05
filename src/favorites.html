@@ -30,8 +30,10 @@
     switchToFavorites,
     initCardsEventListener
   } from './js/exercises.js';
+  import { displayQuote } from './js/quote.js';
 
   document.addEventListener('DOMContentLoaded', () => {
+    displayQuote();
     switchToFavorites();        
     initCardsEventListener();  
   });
@@ -40,5 +42,3 @@
 
 
 </html>
-
-
